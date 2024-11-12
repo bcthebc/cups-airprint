@@ -6,6 +6,8 @@ services:
     container_name: cups
     network_mode: host
     restart: unless-stopped
+    
+    # This will create persistent directories in the home folder (outside the container) in which to store configs
     volumes:
       - /var/run/dbus:/var/run/dbus
       - ~/airprint_data/config:/config
