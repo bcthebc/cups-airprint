@@ -1,6 +1,10 @@
-# My Edits
-I pulled this file from 
-## ToDos
+# ToDos
+### Dockerfile
+- set up base image Ubuntu Jammy
+- install avahi-daemon and avahi-utils (do we need utils?)
+- install cups, cups-bsd, cups-pdf, foomatic-db-compressed-ppds, docx2txt, python-cups, cups-backend-bsnp (this one is for canon printers), printer-driver-all, openprinting-ppds
+
+
 - add code to Dockerfile to install libgtk-3-0 and the Canon printer drivers 
 ```   
       apt install -y libgtk-3-0 -f #/ install libgtk-3-0 with dependencies
@@ -29,7 +33,10 @@ I pulled this file from
 # <a name="about"></a> [About](#toc)
 This is a modification (fork) for my specific use case of [RagingTiger/cups-airprint](https://github.com/RagingTiger/cups-airprint), which itself is a modified copy of source code at:
 https://github.com/quadportnick/docker-cups-airprint. I have an older Canon MFP and could not get any of the common docker images to work. This includes:
-- building the Docker image locally (change this later)
+- Changing the base image to Ubuntu 22.04
+  - Ubuntu is required (as opposed to Alpine etc) because the Canon drivers only come in a .deb or .rhl format.
+- Installing Avahi
+- Building the Docker image locally (as opposed to pulling it from Dockerhub... since this isn't published there yet)
 
 # <a name="intro"></a> [Intro](#toc)
 This Ubuntu-based Docker image runs a CUPS instance that is meant as an AirPrint
