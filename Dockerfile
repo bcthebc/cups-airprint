@@ -30,12 +30,12 @@ VOLUME /config
 VOLUME /services
 
 # Add drivers to image /lib directory
-ADD printerdrivers /lib
+ADD printerdrivers /lib/
 RUN chmod +x /lib/printerdrivers/*
 
 # Install libgtk-3-0 (needed by the Canon driver) and associated dependencies
 RUN apt-get update && \
-	apt install -y libgtk-3-0 -f \
+	apt install -y libgtk-3-0 -f &&\
 	apt-get -y -f install
 
 # Install Canon driver from /lib/printerdrivers directory (ensure the architecture matches the system, ie amd64, and

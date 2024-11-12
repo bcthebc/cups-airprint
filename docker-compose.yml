@@ -1,4 +1,3 @@
-version: "2"
 services:
   cups:
     #image: tigerj/cups-airprint:latest
