@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
   	cups-bsd \
   	cups-filters \
 	inotify-tools \
-	python-cups \
+	python3-cups \
 	cups-backend-bjnp \
 	# printer-specific packages and other helpful things
 	foomatic-db-compressed-ppds \
@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install -y \
 	hpijs-ppds \
 	hp-ppd \
 	hplip \
-	brlaser \
+	printer-driver-brlaser \
 	docx2txt \
 # Clean up the package list to save space
 && rm -rf /var/lib/apt/lists/*
