@@ -1,6 +1,9 @@
 # base image
 FROM ubuntu:jammy
 
+# Avoid timezone and other questions from packages
+ARG DEBIAN_FRONTEND=noninteractive
+
 # label the built image with HEAD commit if given
 ARG GIT_COMMIT=unspecified
 LABEL git_commit=$GIT_COMMIT
